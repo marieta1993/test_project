@@ -8,17 +8,15 @@ angular.module('myApp.login',['ngRoute'])
         });
     }])
 
-    .controller('LoginCtrl', function($scope,$http,$cookieStore,$window,$location) {
-        $scope.getClass = function (path) {
-            console.log(($location.path().substr(0, path.length) === path));
-        };
+    .controller('LoginCtrl', function($scope,$http,$cookieStore,$window) {
+
         let main = this, url = 'http://dev4.wedoapps.eu/';
         main.user ={
             grant_type:'password',
             client_id:"1_5wzjwogvfa80sww4wo0840wocsoo0gk08cgos0skco48k4g48w",
             client_secret:'2valk06xew8w4gkcswwgkg40cs8kgkkg0ssc4g4k4cgokgskwg',
-            username:'Gedeon',
-            password:'Gedeon1',
+            username:'',
+            password:'',
         };
         main.submitUser = function (user) {
             $http.post(url+'en/api/oauth',JSON.stringify(user)).then(function (response) {
