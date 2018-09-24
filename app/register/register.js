@@ -29,7 +29,6 @@ angular.module('myApp.register', ['ngRoute'])
                 $window.location.href = '#!/login';
             }, function (response) {
                 main.errorMessage = response.data.data.message;
-                alert(main.errorMessage);
             })
         }
 

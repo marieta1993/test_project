@@ -13,7 +13,7 @@ angular.module('myApp.login',['ngRoute'])
             $scope.isActive = function (viewLocation) {
                 return viewLocation === $location.path();
             };
-
+        $scope.regex = '\\d+';
         let main = this, url = 'http://dev4.wedoapps.eu/';
         main.user ={
             grant_type:'password',
