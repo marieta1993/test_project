@@ -39,9 +39,10 @@ angular.module('myApp.user_search', ['ngRoute'])
         main.addFriend = function (friend_id) {
             main.friend.friend_id =friend_id;
             $http.post(url+'en/v1/friend/add', main.friend).then(function (response) {
+                alert(response.data.data.status)
             }, function (response) {
-                main.errorMessage = response;
-                console.log(main.errorMessage);
+                main.errorMessage = response.data.data.message;
+                alert(main.errorMessage);
             })
         }
 
