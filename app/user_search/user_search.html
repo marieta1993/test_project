@@ -1,0 +1,28 @@
+<div ng-include src="'topbar/topbar.html'"></div>
+
+<div  class="row justify-content-center align-items-center" ng-controller="UserSearchCtrl as main">
+<div class="container">
+    <form class="form-inline" >
+        <div class="form-group">
+            <input type="text" class="form-control" id="user-search" placeholder="" ng-model="main.userSearch">
+        </div>
+        <div class="form-group">
+        <button type="button"  class="btn btn-info btn-md" ng-click="main.searchUser(main.userSearch)">Search</button>
+        </div>
+    </form>
+</div>
+    <div class="container " id="usersList" >
+        <div class="justify-content-between py-5 row">
+         <div class="card col-12 col-sm-6 col-md-2 border px-0 mr-2 mb-5" ng-repeat="x in main.data">
+                <img class="card-img-top" src="{{x.picture}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{x.firstname}} {{x.lastname}} </h5>
+                    <button ng-click="main.addFriend(x.id)" class="btn btn-outline-info">Add Friend</button>
+                    <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+                </div>
+            </div></div>
+    </div>
+</div>
+
+
+

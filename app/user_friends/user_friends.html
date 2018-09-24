@@ -1,0 +1,10 @@
+<div ng-include src="'topbar/topbar.html'"></div>
+
+<div class="container card-group justify-content-between py-5">
+    <div class="card col-12 col-sm-6 col-md-2 border px-0" ng-repeat="x in data.data">
+        <img class="card-img-top" src="{{x.picture}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{x.firstname}} {{x.lastname}} </h5>
+        </div>
+    </div>
+</div>

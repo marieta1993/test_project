@@ -1,0 +1,23 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  padding: 0 0 0.5em;
+  margin:auto;
+}
+
+input.ng-invalid {
+  border-color: #f21619;
+}
+.error{
+  color: #f21619;
+}
+
+input.ng-valid input{
+ border-color:#2b8bc0;
+}
+
+.menu > li {
+  display: inline;
+}
+

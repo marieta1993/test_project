@@ -1,0 +1,16 @@
+
+<div ng-include src="'topbar/topbar.html'"></div>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{data.data.image}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{data.data.first_name }} {{data.data.last_name}}</h5>
+        <p class="card-text"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Email: {{data.data.email}}</li>
+        <li class="list-group-item">Profile: {{data.data.profile}}</li>
+        <li class="list-group-item">Status: {{data.data.status}}</li>
+        <li class="list-group-item">Zip-code: {{data.data.zip_code}}</li>
+    </ul>
+</div>
+
