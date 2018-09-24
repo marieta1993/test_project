@@ -9,7 +9,10 @@ angular.module('myApp.user_friends', ['ngRoute'])
         });
     }])
 
-    .controller('UserFriendsCtrl', function($cookieStore,$scope,$http) {
+    .controller('UserFriendsCtrl', function($cookieStore,$scope,$http,$location) {
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
         let user_access= JSON.parse($cookieStore.get('UserData')),
             url = 'http://dev4.wedoapps.eu/';
         $http.defaults.headers.common.Authorization = 'Bearer '+user_access.access_token;

@@ -8,7 +8,11 @@ angular.module('myApp.login',['ngRoute'])
         });
     }])
 
-    .controller('LoginCtrl', function($scope,$http,$cookieStore,$window) {
+    .controller('LoginCtrl', function($scope,$http,$cookieStore,$window,$location) {
+
+            $scope.isActive = function (viewLocation) {
+                return viewLocation === $location.path();
+            };
 
         let main = this, url = 'http://dev4.wedoapps.eu/';
         main.user ={

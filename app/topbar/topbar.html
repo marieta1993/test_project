@@ -6,16 +6,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item ">
-                <a class="nav-link" href="#!/main">User Page </a>
+                <a ng-class="{ active: isActive('/main')}" class="nav-link" href="#!/main">User Page </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#!/user_friends">User Friends</a>
+                <a ng-class="{ active: isActive('/user_friends')}" class="nav-link" href="#!/user_friends">User Friends</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#!/user_search">User Search</a>
+                <a ng-class="{ active: isActive('/user_search')}" class="nav-link" href="#!/user_search">User Search</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#!/logout">Logout</a>
+                <a ng-class="{ active: isActive('/logout')}" class="nav-link" href="#!/logout">Logout</a>
             </li>
         </ul>
     </div>

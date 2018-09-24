@@ -9,7 +9,11 @@ angular.module('myApp.logout', ['ngRoute'])
         });
     }])
 
-    .controller('LogoutCtrl', function($scope,$http,$cookieStore,$window) {
+    .controller('LogoutCtrl', function($scope,$http,$cookieStore,$window,$location) {
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
+
         $window.location.href = '#!/login';
         let  user_access= JSON.parse($cookieStore.get('UserData')),url ='http://dev4.wedoapps.eu/';
         $http.defaults.headers.common.Authorization = 'Bearer '+user_access.access_token;

@@ -9,7 +9,10 @@ angular.module('myApp.register', ['ngRoute'])
         });
     }])
 
-    .controller('RegisterCtrl', function($http,$scope,$cookieStore,$window) {
+    .controller('RegisterCtrl', function($http,$scope,$cookieStore,$window,$location) {
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
         let main = this, url = 'http://dev4.wedoapps.eu/';
         main.user ={
             first_name:'',

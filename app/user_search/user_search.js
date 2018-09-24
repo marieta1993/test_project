@@ -8,7 +8,10 @@ angular.module('myApp.user_search', ['ngRoute'])
         });
     }])
 
-    .controller('UserSearchCtrl', function($scope,$http,$cookieStore) {
+    .controller('UserSearchCtrl', function($scope,$http,$cookieStore,$location) {
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
 
         let user_access= JSON.parse($cookieStore.get('UserData')),main = this,
             url = 'http://dev4.wedoapps.eu/';

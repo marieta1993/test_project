@@ -10,7 +10,10 @@ angular.module('myApp.main', ['ngRoute'])
         });
     }])
 
-    .controller('MainCtrl', function($scope,$http,$cookieStore) {
+    .controller('MainCtrl', function($scope,$http,$cookieStore,$location) {
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
         let  user_access= JSON.parse($cookieStore.get('UserData')),url ='http://dev4.wedoapps.eu/',main = this;
         $http.defaults.headers.common.Authorization = 'Bearer '+user_access.access_token;
         $http({
